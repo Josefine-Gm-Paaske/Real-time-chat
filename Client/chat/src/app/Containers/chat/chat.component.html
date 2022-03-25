@@ -1,6 +1,7 @@
 <div class="container">
     <h1></h1>
     <app-usernname (userNameEvent)="userNameUpdate($event)" *ngIf="!userName"></app-usernname>
+    
     <div class="chatbox">
       <div class="chatbox__user-list">
         <h2>User list</h2>
@@ -8,6 +9,7 @@
           <p>{{ user }}</p>
         </div>
       </div>
+
       <div class="messages_list">
         <div class="chatbox__messages" *ngFor="let msg of messageList" [ngClass]="{mine: msg.mine}">
           <div class="user-message">
@@ -20,6 +22,7 @@
         </div>
       </div>
     </div>
+    
     <div class="send-message">
       <input type="text" [(ngModel)]="message">
       <button (click)="sendMessage()">Send</button>
